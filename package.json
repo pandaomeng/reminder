@@ -1,0 +1,37 @@
+{
+  "name": "reminder",
+  "version": "1.0.0",
+  "description": "A chrome extension to remind you.",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "build": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandaomeng/reminder.git"
+  },
+  "keywords": [
+    "crx"
+  ],
+  "author": "pandaomeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pandaomeng/reminder/issues"
+  },
+  "homepage": "https://github.com/pandaomeng/reminder#readme",
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^5.0.0",
+    "@types/node": "^13.13.4",
+    "@types/webpack": "^4.41.12",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^4.3.0",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "write-file-webpack-plugin": "^4.5.1"
+  }
+}
