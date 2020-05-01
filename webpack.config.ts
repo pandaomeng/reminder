@@ -5,18 +5,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WriteFileWebpackPlugin from 'write-file-webpack-plugin';
 
-const fileExtensions = [
-  'jpg',
-  'jpeg',
-  'png',
-  'gif',
-  'eot',
-  'otf',
-  'svg',
-  'ttf',
-  'woff',
-  'woff2',
-];
+const fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
 
 const config: webpack.Configuration = {
   mode: 'production',
@@ -57,7 +46,7 @@ const config: webpack.Configuration = {
               description: process.env.npm_package_description,
               version: process.env.npm_package_version,
               ...JSON.parse(content.toString()),
-            })
+            }),
           );
         },
       },
