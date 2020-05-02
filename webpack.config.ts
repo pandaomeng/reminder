@@ -54,19 +54,19 @@ const config: webpack.Configuration = {
       },
     ]),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'background.html'),
+      template: path.join(__dirname, 'src', 'html', 'background.html'),
       filename: 'background.html',
       chunks: ['background'],
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'options.html'),
+      template: path.join(__dirname, 'src', 'html', 'options.html'),
       filename: 'options.html',
       chunks: ['options'],
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'popup.html'),
+      template: path.join(__dirname, 'src', 'html', 'popup.html'),
       filename: 'popup.html',
       chunks: ['popup'],
       cache: false,
