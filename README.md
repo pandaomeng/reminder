@@ -15,6 +15,7 @@
 
 ```
 git clone git@github.com:pandaomeng/reminder.git
+cd reminder
 npm i
 npm run start
 ```
@@ -28,3 +29,5 @@ npm run start 会在项目中生成 dist/ 文件夹，该文件夹即为 chrome 
 点击 `加载已解压的扩展程序` 按钮，选择第一步生成的 dist 文件夹。
 
 此时，Reminder 就加载完成了，enjoy it!
+
+## TODO
