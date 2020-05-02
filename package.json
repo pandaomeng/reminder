@@ -58,7 +58,9 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
+    "moment": "^2.25.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "uuid": "^8.0.0"
   }
 }
