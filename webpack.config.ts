@@ -13,6 +13,7 @@ const config: webpack.Configuration = {
   entry: {
     background: path.join(__dirname, 'src', 'js', 'background'),
     options: path.join(__dirname, 'src', 'js', 'options'),
+    popup: path.join(__dirname, 'src', 'js', 'popup'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -62,6 +63,12 @@ const config: webpack.Configuration = {
       template: path.join(__dirname, 'src', 'options.html'),
       filename: 'options.html',
       chunks: ['options'],
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'popup.html'),
+      filename: 'popup.html',
+      chunks: ['popup'],
       cache: false,
     }),
     new WriteFileWebpackPlugin(),
