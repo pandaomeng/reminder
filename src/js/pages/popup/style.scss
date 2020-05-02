@@ -1,0 +1,7 @@
+$container-width: 300px;
+$golden-radio: 1.618; // 使用黄金分割比设置宽高
+
+.container {
+  width: $container-width;
+  height: $container-width * $golden-radio;
+}
