@@ -9,7 +9,7 @@
 
 ## Develop
 
-一、启动项目
+### 一、启动项目
 
 执行以下命令：
 
@@ -21,7 +21,7 @@ npm run start
 
 npm run start 会在项目中生成 dist/ 文件夹，该文件夹即为 chrome 插件的文件夹
 
-二、载入插件
+### 二、载入插件
 
 使用 chrome 浏览器打开网址 [chrome://extensions/](chrome://extensions/)
 
