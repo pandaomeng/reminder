@@ -1,23 +1,27 @@
+/* eslint-disable no-restricted-syntax */
 import webpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 import path from 'path';
-// @ts-ignore
-import config from './webpack.config.ts';
-// @ts-ignore
-import env from './env.ts';
+import config from './webpack.config';
+import env from './env';
 
 // 处理 webpack config
-// eslint-disable-next-line
-for (const entryName in config.entry as any) {
-  config.entry![entryName] = [
-    `webpack-dev-server/client?http://localhost:${env.PORT}`,
-    'webpack/hot/dev-server',
-  ].concat(config.entry![entryName]);
-}
-const compiler = webpack(config);
-
-config.plugins = [new webpack.HotModuleReplacementPlugin()].concat(config.plugins || []);
-console.log('config', config);
+const entries = Object.entries(config.entry as webpack.Entry);
+const devConfig: webpack.Configuration = {
+  ...config,
+  plugins: [new webpack.HotModuleReplacementPlugin()].concat(config.plugins || []),
+  entry: entries.reduce(
+    (accumulator, [entryName, entryPath]) => ({
+      ...accumulator,
+      [entryName]: [
+        `webpack-dev-server/client?http://localhost:${env.PORT}`,
+        'webpack/hot/dev-server',
+      ].concat(entryPath),
+    }),
+    {},
+  ),
+};
+const compiler = webpack(devConfig);
 
 // 设置 webpackDevServer 的 options
 const options: webpackDevServer.Configuration = {
@@ -29,7 +33,7 @@ const options: webpackDevServer.Configuration = {
   disableHostCheck: true,
   sockPort: env.PORT,
 };
-webpackDevServer.addDevServerEntrypoints(config, options);
+webpackDevServer.addDevServerEntrypoints(devConfig, options);
 
 // eslint-disable-next-line new-cap
 const server: webpackDevServer = new webpackDevServer(compiler, options);

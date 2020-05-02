@@ -1,3 +1,3 @@
 import '../img/icon.png';
 
-console.log('this is background');
+console.log('this is background1');

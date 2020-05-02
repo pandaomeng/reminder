@@ -16,8 +16,26 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './webpack.config.ts',
+      },
+    },
+  },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        tsx: 'never',
+        ts: 'never',
+        js: 'never',
+      },
+    ],
     'import/no-extraneous-dependencies': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
 };
