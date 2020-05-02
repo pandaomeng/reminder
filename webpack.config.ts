@@ -11,8 +11,8 @@ const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    background: path.join(__dirname, 'src', 'js', 'background.ts'),
-    options: path.join(__dirname, 'src', 'js', 'options.ts'),
+    background: path.join(__dirname, 'src', 'js', 'background'),
+    options: path.join(__dirname, 'src', 'js', 'options'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x?)$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
