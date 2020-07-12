@@ -68,6 +68,8 @@ const Popup: React.FC<Props> = () => {
       <button type="button" onClick={handleClose}>
         close notification
       </button>
+
+      <div className="add-clock-button" />
     </div>
   );
 };

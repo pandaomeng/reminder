@@ -1,7 +1,53 @@
 $container-width: 300px;
 $golden-radio: 1.618; // 使用黄金分割比设置宽高
 
+$add-button-diameter: 40px;
+
 .container {
+  position: relative;
+
   width: $container-width;
   height: $container-width * $golden-radio;
+
+  .add-clock-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+
+    width: $add-button-diameter;
+    height: $add-button-diameter;
+    margin: 0 auto;
+
+    cursor: pointer;
+    transform: translateX(-$add-button-diameter / 2);
+
+    border-radius: 50%;
+    background-color: #1faaf1;
+    box-shadow: 0 1px 1px 2px #1faaf138;
+  }
+
+  .add-clock-button:hover {
+    background: #1faaf1b8;
+  }
+
+  .add-clock-button::before,
+  .add-clock-button::after {
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 15%;
+
+    display: block;
+
+    width: $add-button-diameter * .7;
+    height: 4px;
+
+    content: '';
+
+    border-radius: 2px;
+    background: white;
+  }
+  .add-clock-button::after {
+    transform: rotate(90deg);
+    transform-origin: 50% 2px;
+  }
 }
