@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "antd": "^4.2.0",
-    "moment": "^2.25.1",
+    "moment": "^2.29.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uuid": "^8.0.0"
